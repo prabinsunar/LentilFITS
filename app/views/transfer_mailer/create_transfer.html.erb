@@ -1,0 +1,13 @@
+<p>A new borrow transfer has been placed in LentilFITS.</p>
+<br>
+<b>Stock name:</b> <%= @transfer.stock.name%>
+<br>
+<b>Quantity:</b> <%= @transfer.quantity%>
+<br>
+<b>Received by:</b> <%= @transfer.expire_at%>
+<br>
+<b>Site name:</b> <%= @transfer.member.name%>
+<br>
+<b>Created by user:</b> <%= @user.name%>, with IP: <%= @user.current_sign_in_ip%>
+
+<p>These stocks are now available</p>

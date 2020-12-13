@@ -1,0 +1,131 @@
+<header class="main-header">
+  <!-- Logo -->
+  <a href="<%= root_url %>" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini">
+      <b>l</b>entil</span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg">
+      <b>LentilAsAnything</b>
+    </span>
+  </a>
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+  </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <%= image_tag("user160x160.png", class: "img-circle") %>
+      </div>
+      <div class="pull-left info">
+        <% if current_user.access == 2%>
+          <p><%= current_user.name %> (<i>Admin</i>)</p>
+        <% else %>
+          <p><%= current_user.name %> (<i>User</i>)</p>
+        <% end %>
+        <b class="fa fa-map-marker"> <%= current_user.site.name %></b>
+        <a href="<%= edit_user_path(current_user.id) %>"><br/><br/>
+          <i class="fa fa-edit"></i>
+          Edit Profile</a>
+        <a href="">
+          <%= link_to destroy_user_session_path, method: :delete  do %>
+          <i class="fa fa-sign-out"></i>Log Out
+        <% end %>
+        </a>
+      </div>
+    </div>
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+      <li class="header">MAIN NAVIGATION</li>
+      <li>
+        <a href="<%= root_url %>">
+          <i class="fa fa-home"></i>
+          <span>Home Page</span>
+        </a>
+      </li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-search"></i> <span>Check Stock Items</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<%= stocks_path %>"><i class="fa fa-caret-right"></i><%= current_user.site.name %> Stocks</a></li>
+          <li><a href="<%= allstock_path %>"><i class="fa fa-caret-right"></i>All Site Stocks</a></li>
+          <li>
+            <a href="<%= new_stock_path %>"><i class="fa fa-plus"></i><span>Add New Item</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-cutlery"></i> <span>Kitchen</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <a href="<%= consumptions_path %>"><i class="fa fa-plus"></i><span>New Consumption</span></a>
+          </li>
+          <li>
+            <a href="<%= consumptions_list_path %>"><i class="fa fa-caret-right"></i><%= current_user.site.name %> <span>Consumptions</span></a>
+          </li>
+          <li>
+            <a href="<%= allview_path %>"><i class="fa fa-caret-right"></i>All Site Consumptions</a>
+          </li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-exchange"></i> <span>Site Transfer</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <a href="<%= list_transfer_path %>"><i class="fa fa-plus"></i><span>New Transfer</span></a>
+          </li>
+          <li>
+            <a href="<%= past_transfers_path %>"><i class="fa fa-caret-right"></i><%= current_user.site.name %> Past Transfers</a>
+          </li>
+          <li>
+            <a href="<%= allold_path %>"><i class="fa fa-caret-right"></i>All Site Transfers</a>
+          </li>
+        </ul>
+      </li>
+      <% if current_user.access == 2%>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-user"></i> <span>Admin Menu</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li>
+            <a href="<%= categories_path %>"><i class="fa fa-tags"></i><span> Category Management</span></a>
+          </li>
+          <li>
+            <a href="<%= sizes_path %>"><i class="fa fa-balance-scale"></i><span> Size Management</span></a>
+          </li>
+          <li>
+            <a href="<%= sites_path %>"><i class="fa fa-map"></i><span> Site Management</span></a>
+          </li>
+          <li>
+            <a href="<%= donators_path %>"><i class="fa fa-gift"></i><span> Donator Management</span></a>
+          </li>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>

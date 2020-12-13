@@ -1,0 +1,81 @@
+<body class="hold-transition skin-red-light sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <div class="content-wrapper">
+
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          <%= current_user.site.name %> Kitchen
+          <small>Stocks</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+          <li class="active">Kitchen</li>
+        </ol>
+      </section>
+
+      <section class="content">
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Main data table -->
+            <div class="box">
+
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Item Name</th>
+                      <th>Available Qty</th>
+                      <th>Size</th>
+                      <th>Description</th>
+                      <th>Consume</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @stocks.each do |stock| %>
+                    <tr>
+                      <td><%= stock.category.name %></td>
+                      <td><%= stock.name %></td>
+                      <% if stock.quantity % 1 == 0 %>
+                      <td><%= stock.quantity.to_i %></td>
+                      <%else%>
+                      <td><%= stock.quantity %></td>
+                      <%end%>
+                      <td><%= stock.size.name %></td>
+                      <td><%= stock.description %></td>
+                      <td><%= link_to 'Consume', new_consumption_path(stock: stock.id) %></td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+  <script>
+    $(function () {
+      $("#example1").DataTable();
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+      });
+    });
+  </script>
+</body>

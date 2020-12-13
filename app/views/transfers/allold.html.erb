@@ -1,0 +1,81 @@
+<body class="hold-transition skin-red-light sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <div class="content-wrapper">
+
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          All Site Transfers
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+          <li class="active">Site Transfers</li>
+        </ol>
+      </section>
+
+      <section class="content">
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Main data table -->
+            <div class="box">
+
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Item Name</th>
+                      <th>Quantity</th>
+                      <th>Transfered at</th>
+                      <th>Received at</th>
+                      <th>Origin</th>
+                      <th>Destination</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @inactive.each do |transfer| %>
+                    <tr>
+                      <td><%= transfer.stock.category.name %></td>
+                      <td><%= transfer.stock.name %></td>
+                      <% if transfer.quantity % 1 == 0 %>
+                      <td><%= transfer.quantity.to_i %></td>
+                      <%else%>
+                      <td><%= transfer.quantity %></td>
+                      <%end%>
+                      <td><%= transfer.created_at.strftime("%A, %d/%m/%Y %l:%M %p") %></td>
+                      <td><%= transfer.updated_at.strftime("%A, %d/%m/%Y %l:%M %p") %></td>
+                      <td><%= transfer.origin %></td>
+                      <td><%= transfer.destination %></td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+  <script>
+    $(function () {
+      $("#example1").DataTable();
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+      });
+    });
+  </script>
+</body>

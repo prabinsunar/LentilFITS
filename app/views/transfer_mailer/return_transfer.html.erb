@@ -1,0 +1,11 @@
+<p>Some stocks have been marked as "received" in LentilFITS.</p>
+<br>
+<b>Stock name:</b> <%= @transfer.stock.name%>
+<br>
+<b>Quantity:</b> <%= @transfer.quantity%>
+<br>
+<b>Destination</b> <%= @transfer.site.name%>
+<br>
+<b>Marked as "received" by user:</b> <%= @user.name%>, with IP: <%= @user.current_sign_in_ip%>
+
+<p>These stocks are now available</p>

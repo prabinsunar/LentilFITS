@@ -1,0 +1,38 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: freedbtech_lentilfitsdb
+  pool: 5
+  username: freedbtech_lentil_admin
+  password: password
+  # socket: /var/run/mysqld/mysqld.sock
+  host: freedb.tech
+  port: 3306
+  # host: dblentilfits.caghxtzcp6tm.us-east-2.rds.amazonaws.com
+  # port: 3305
+  
+# test:
+#   adapter: mysql2
+#   encoding: utf8
+#   database: lentilfitsdb_test
+#   pool: 5
+#   username: freedbtech_lentil_admin
+#   password: password
+#   host: freedb.tech
+#   port: 3306
+#   # socket: /var/run/mysqld/mysqld.sock
+#   # host: dblentilfits.caghxtzcp6tm.us-east-2.rds.amazonaws.com
+#   # port: 3305
+  
+# production:
+#   adapter: mysql2
+#   encoding: utf8
+#   database: lentilfitsdb_production
+#   pool: 5
+#   username: freedbtech_lentil_admin
+#   password: password
+#   host: freedb.tech
+#   port: 3306
+#   # socket: /var/run/mysqld/mysqld.sock
+#   # host: dblentilfits.caghxtzcp6tm.us-east-2.rds.amazonaws.com
+#   # port: 3305

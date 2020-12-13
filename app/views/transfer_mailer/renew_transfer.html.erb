@@ -1,0 +1,11 @@
+<p>Some stocks have been renewed for 7 days in Inventorious.</p>
+<br>
+<b>stock name:</b> <%= @transfer.item.name%>
+<br>
+<b>Quantity:</b> <%= @transfer.quantity%>
+<br>
+<b>Return by:</b> <%= @transfer.expire_at%>
+<br>
+<b>Member name:</b> <%= @transfer.member.name%>
+<br>
+<b>Renewed by user:</b> <%= @user.name%>, with IP: <%= @user.current_sign_in_ip%>
