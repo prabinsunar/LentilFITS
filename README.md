@@ -29,8 +29,8 @@ A food inventory management and tracking system built with Ruby on Rails 5.
 
 ### Credentials
 There are 4 restaurants location and each of them have admin and user account.
-Email: user.abb@lentilasanything.com
-Password: password
+- Email: user.abb@lentilasanything.com
+- Password: password
 * replace 'user' with 'admin' to change it to admin account
 
 For the other restaurant account, replace 'abb' with:
