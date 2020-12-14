@@ -4,9 +4,13 @@ A food inventory management and tracking system built with Ruby on Rails 5.
 
 !["Dashboard"](https://github.com/dayramaelbranz/LentilFITS/blob/master/main%20dashboard.png)
 
+Lentil Food Inventory Tracking System is a web-based application and built for Lentil as Anything organisation. The web application has 3 main modules i.e. Inventory, Kitchen Consumption, and Site transfer that supports the following features:
+•	Track and transfer stocks in different sites
+•	Keep a record of stocks
+•	Add and consume the stock
 
 ## Description
-
+Users and admin(who have access to the app) in a particular restaurant location, can check items in their inventory. Item transfer to other restaurant location can then be marked as received or canceled. Kitchen module let the user to make consumption once they consume the item from the inventory.
 
 ## Installation Instructions
 
@@ -37,3 +41,5 @@ For the other restaurant account, replace 'abb' with:
 - 'tho' for Thornbury
 - 'stk' for St. Kilda
 - 'new' for Newtown
+
+_Special Thanks to https://github.com/zmitzie/inventorious / @zmitzie for the ideas._
