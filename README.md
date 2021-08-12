@@ -40,6 +40,6 @@ There are 4 restaurants location and each of them have admin and user account.
 For the other restaurant account, replace 'abb' with:
 - 'tho' for Thornbury
 - 'stk' for St. Kilda
-- 'new' for Newtown
+- 'new' for Newton
 
 _Special Thanks to https://github.com/zmitzie/inventorious / @zmitzie for the ideas._
